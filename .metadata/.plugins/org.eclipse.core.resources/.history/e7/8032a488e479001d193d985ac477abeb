@@ -1,0 +1,33 @@
+package ChangedVehicleProgram;
+
+
+
+public class Person {
+	String name;//이건 필수적이진 않지만 그냥 넣어본것.
+	double money;//필수적임.
+	Integer age;//unnecessary
+	Integer currentBusNum;//necessary
+	boolean isRide;//necessary
+	double countTime;//내리고 나서 30분 체크.
+	
+	Person(String name, double money, Integer age)
+	{
+		this.name = name;
+		this.money = money;
+		this.age = age;//해당 객체의 생성.
+	}
+	
+	public boolean ride() {
+		isRide = true;
+		return isRide;
+		
+	}
+	public boolean getOff() {
+		isRide = false;
+		return isRide;
+	}
+	
+	
+	
+	
+}

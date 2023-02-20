@@ -1,0 +1,6 @@
+package pkg3;
+
+public interface Shape {
+
+	public double getArea();
+}

@@ -1,0 +1,76 @@
+package pkg3;
+/*
+ * 삼각형 도형을 나타내는 클래스
+ */
+final class Tri implements Shape{
+	//밑변 * 높이 / 2 
+	//1. 밑변을 정수로 보관할 멤버변수가 필요
+	private double a;
+	private double b;
+	
+	public Tri(int a, int b) {
+		this.a=a;
+		this.b=b;
+	}
+	
+	
+	//3. 위에서 선언한 멤버변수 a와 b에 특정 값을 입력하는 생성자를 정의
+@Override
+	public double getArea() {
+		// TODO Auto-generated method stub
+		double result =a*b/2;
+		return result;
+	}
+	@Override
+	public double getArea(double a, double b) {
+		this.a=a;
+		this.b=b;
+		return this.a*this.b/2;
+	}
+	
+	@Override
+	public double getArea(double a) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+}
+class Rect implements Shape{
+	
+	double a,b;
+	
+	Rect(double a, double b){
+	 this.a = a;
+	 this.b = b;
+	}
+	
+	@Override
+	public double getArea(double a, double b) {
+		this.a=a;
+		this.b=b;
+		return a*b;
+	}
+	
+	@Override
+	public double getArea() {
+		// TODO Auto-generated method stub
+		return this.a*this.b;
+	}
+
+	@Override
+	public double getArea(double a) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+}
+public class Area {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

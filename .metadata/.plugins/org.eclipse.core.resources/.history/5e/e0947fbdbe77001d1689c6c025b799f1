@@ -1,0 +1,39 @@
+package mypkg01;
+
+public class TestMethod {
+
+	/*
+	 * 새로운 메소드의정의
+	 * 1) 절댓값을 구하는 메소드를정의하기
+	 * - 메소드의 구조 : 외부로부터 하나의 정숫값을 받기
+	 *  - 매개변수를 선언: (Integer value)
+	 *  반환형을 쓰기.
+	 */
+	
+	public int abs(Integer value) {
+		int result;
+//		if(value<0) {
+//			result=value*-1;
+//			//if조건문을 사용
+//			//가. 결과를 보관할 변수를 선언
+//			//나. 조건문에서 매개변수인 value의 값이 음수인 경우에만 양수로 바꾸기
+//		}
+//		else
+//			result = value;
+		result = (value < 0) ? (value*-1): value;
+		return result;
+		
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TestMethod a = new TestMethod();
+		int result1, result2;
+		result1 = a.abs(-1);
+		result2 = a.abs(1);
+		
+		System.out.println(result1);
+		System.out.println(result2);
+	}
+
+}

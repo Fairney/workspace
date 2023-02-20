@@ -1,0 +1,20 @@
+package ChangedVehicleProgram;
+
+import java.util.Vector;
+
+public class MainController {
+	
+	
+	void inputPerson(String name, double money)
+	{
+		Person n = new Person(name,money);
+		
+	};
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Vector<Person> collector = new Vector<>();
+		
+		collector.add(n);
+	}
+
+}

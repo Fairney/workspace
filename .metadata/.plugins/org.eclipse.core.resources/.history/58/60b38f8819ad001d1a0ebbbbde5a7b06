@@ -1,0 +1,97 @@
+package map;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
+
+import memberGroup.Member;
+
+public class MapController {
+	private Map map = new HashMap();
+	public void doProperties() {
+		Properties prop = new Properties();
+		prop.put("간식", "사탕");
+		prop.put(1, 10);
+		prop.setProperty("야채", "피망");
+		prop.setProperty("육류", "돼지고기");
+		System.out.println(prop);
+		
+		System.out.println(prop.getProperty("육류"));
+	}
+	public void doMap() {
+		
+		map.put("새우깡", new Snack("짠맛",1500));
+		map.put("꿀꽈배기", new Snack("단맛",1600));
+		map.put("허니포테토", new Snack("단짠맛",1700));
+		map.put("다이제", new Snack("단맛",1600));
+		System.out.println(map);
+		
+		map.put("새우깡", new Snack("단짠맛",1700));
+		System.out.println(map);
+		
+		Set set2 = map.keySet();
+		for(Object o : set2) {
+			Map.Entry me = (Map.Entry)o;
+			System.out.printf("키 : %s, 값: %s%n", me.getKey(), me.getValue());
+		}
+	}
+	public boolean joinMembership(String id, Member m) {
+		if(!map.containsKey(id)) {
+			map.put(id, m);
+			return true;
+		}else {
+			return false;
+		}
+	}
+	public String logIn(String id, String password) {
+		if(map.containsKey(id)) {
+			Member m = (Member)map.get(id);
+			String savedPw = m.getPassword();
+			if(password.equals(savedPw)){
+				return m.getId();
+			}
+			return null;
+		}
+			
+	}
+	
+	public void fileSave() {
+		//파일을 저장하는 메소드
+		try(FileOutputStream fos = new FileOutputStream("test.properties")){
+			Properties prop = new Properties();
+			prop.setProperty("title", "Properties Practice");
+			prop.setProperty("width", "1920");
+			prop.setProperty("height", "1080");
+			prop.setProperty("language", "kor");
+			
+			//store(OutputStream out, String coments)
+			//:out에 prop저장, comment는 주석으로 맨 위에 저장
+			prop.store(fos, "Properties Test File");
+		} catch(FileNotFoundException e)
+		{
+			e.printStackTrace();
+		} catch(IOException e) {
+			// TODO: handle exception
+		}
+	}
+		public void fileOpen() {
+			try(FileInputStream fis = new FileInputStream("test.properties")){
+				Properties prop = new Properties();
+				prop.load(fis);
+				System.out.println(prop);
+			}catch(FileNotFoundException e) {
+				e.printStackTrace();
+			}catch(IOException e) {
+				e.printStackTrace();
+			}
+		}
+			
+		
+	
+
+}

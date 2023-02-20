@@ -1,0 +1,21 @@
+
+
+import Collection.SetTest;
+import map.MapController;
+
+public class Run {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		SetTest st = new SetTest();
+//		st.doSet();
+		
+		MapController mc = new MapController();
+//		mc.doMap();
+		
+		mc.doProperties();
+		mc.fileOpen();
+		mc.fileSave();
+	}
+
+}

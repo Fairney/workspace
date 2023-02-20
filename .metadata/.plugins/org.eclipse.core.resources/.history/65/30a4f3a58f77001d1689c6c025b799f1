@@ -1,0 +1,12 @@
+/*
+ * 1. Human 클래스를 정의
+ * 2. main() 함수를 정의
+ */
+public class Human {
+	//첫번째 영역
+	public static void main(String[] args) {
+		//두번째 영역
+
+	}
+	//세번째 영역.
+}

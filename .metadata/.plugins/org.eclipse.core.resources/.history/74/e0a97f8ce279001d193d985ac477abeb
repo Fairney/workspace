@@ -1,0 +1,32 @@
+package ChangedVehicleProgram;
+
+
+
+public class Person {
+	String name;
+	double money;
+	Integer age;
+	Integer currentBusNum;
+	boolean isRide;
+	
+	Person(String name, double money, Integer age)
+	{
+		this.name = name;
+		this.money = money;
+		this.age = age;
+	}
+	
+	public boolean ride() {
+		isRide = true;
+		return isRide;
+		switch()
+	}
+	public boolean getOff() {
+		isRide = false;
+		return isRide;
+	}
+	
+	
+	
+	
+}

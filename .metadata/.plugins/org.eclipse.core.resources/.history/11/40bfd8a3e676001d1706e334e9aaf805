@@ -1,0 +1,18 @@
+package ChangedVehicleProgram;
+
+
+
+public class Person {
+	String name;
+	double money;
+	
+	Person(String name, double money)
+	{
+		this.name = name;
+		this.money = money;
+	}
+	
+	
+	
+	
+}

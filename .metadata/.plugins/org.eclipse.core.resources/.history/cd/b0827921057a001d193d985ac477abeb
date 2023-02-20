@@ -1,0 +1,24 @@
+/*
+ * 1. 매개변수 예제 작성
+ */
+public class MyClass2 {
+	//2. 정수 절댓값을 구하는 함수를 정의
+	public int abs(int a) {
+		System.out.println("abs(int a) 메소드가 호출됨");
+		return a<0 ? -a:a;
+	}
+	//abs()함수 내부에서는 매개변수인 int a를 선언해서 사용
+	//-매개변수의 속성: 함수 외부에서 호출되는시점에만 메모리에 만들어지고 사용
+	// - 함수가종료되는 시점에 메모리에서 없어짐
+	// - 즉, 다른 함수에서는 사용할 수없음
+	
+	public void method() {
+		System.out.println("abs(int a) 메소드의 매개변수 a를 사용해보기");
+		System.out.println(a);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,16 @@
+package A_list.listSort;
+
+import java.util.Comparator;
+
+public class AscendingName implements Comparator{
+
+	@Override
+	public int compare(Object o1, Object o2) {
+		
+		Customer a = (Customer) o1;
+		Customer b = (Customer) o2;
+		
+ 		return a.getName().compareTo(b.getName());
+	}
+
+}

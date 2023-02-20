@@ -1,0 +1,72 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+import sun.applet.Main;
+
+/*
+ * Set 계열의 클래스를 이용하여 로또번호를 랜덤함수를 이용하여 생성하고
+ * List계열의 클래스를 이용하여 정렬하여 출력하는 로또구매 프로그램을 작성하시오.
+ */
+
+public class Problem3 {
+	Scanner sc = new Scanner(System.in);
+	int selectNum;
+	int coin;
+	int lottoNum;
+	public void lottoWelcome() {
+		
+		System.out.println("===============");
+		System.out.println("1. Lotto 구매");
+		System.out.println("2. 프로그램 종료");
+		System.out.println("===============");
+		System.out.print("메뉴 선택 : ");
+		selectNum = sc.nextInt();
+		
+		lottoBuy();
+	} 
+	
+	public void lottoBuy() {
+		
+		System.out.println("Lotto를 구매합니다.");
+		System.out.println("[로또 구입단가 1000원]");
+		System.out.print("금액 입력: ");
+		coin = sc.nextInt();
+		lottoNum = coin/1000;
+	}
+	public void lottoPrint() {
+		System.out.println("로또 번호 출력하기");
+		int a = 0;
+		int b = 0;
+		while(a<lottoNum){
+			//System.out.print("로또번호" + (a+1) +);
+			Set<Integer> set = new HashSet();
+			
+			for(int i = 0; set.size()<6; i++)
+			{
+				b = set.size();
+				set.add((int)Math.random());
+				ArrayList<Integer> arr = new ArrayList(set);
+				Collections.sort(arr);
+				System.out.println("로또번호" + i + " : " + arr);
+			}
+			a++;
+		}
+	}
+	
+	public static void main(String[] args) {
+	Problem3 p = new Problem3();
+	while(true)
+	{
+		p.lottoWelcome();
+		if(p.lottoNum>0) {
+			p.lottoPrint();
+			
+		}
+	}
+	}
+}
+	

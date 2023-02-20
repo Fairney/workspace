@@ -1,0 +1,24 @@
+package ChangedVehicleProgram;
+
+public class Vehicle {
+	
+	
+	boolean isRide = false;
+	void take(Person p) {//버스를 탔을 때, Person클래스 매개변수를 받아와서 그 클래스 내부에 있는 변수를 변화시킬 것이다.
+		
+		if(p.age <=7 && p.money>=700) {
+			isRide = true;
+			p.money -= 700;
+		}
+		else if(p.age <= 19 && p.money >=1150) {
+			isRide = true;
+			p.money -=1150;
+		}
+		else if(p.age>19 && p.money>=1450){
+			isRide = true;
+			
+		}
+			
+		
+	}
+}

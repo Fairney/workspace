@@ -1,0 +1,11 @@
+
+
+public class TestPoint{
+	
+	private static void main(String[] args) {
+		Point a = new Point();
+		a.showPoint();
+		
+	}
+}
+

@@ -1,0 +1,14 @@
+package A_list.listSort;
+
+public class Customer {
+	private String name;
+	private int age;
+	private char gender;
+	private double point;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

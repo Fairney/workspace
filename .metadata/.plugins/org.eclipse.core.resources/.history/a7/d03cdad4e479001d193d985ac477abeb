@@ -1,0 +1,36 @@
+package ChangedVehicleProgram;
+
+public class Bus implements Vehicle{
+	Integer busNum;
+	
+	@Override
+	public void take(Person p, Integer busNum) {//버스를 타는 시스템: 버스를 타서 돈을 지불하고 Person객체의 isRide를 true로 변환시킴
+		
+		if(p.age <=7 && p.money>=700) {
+			p.ride();//Person n 의 n내부에 있는 값을 true로 변환시킨다.
+			p.money -= 700;
+		}
+		else if(p.age <= 19 && p.money >=1150) {
+			p.ride();
+			p.money -=1150;
+		}
+		else if(p.age>19 && p.money>=1450){
+			p.ride();
+			p.money -= 1450;
+		}
+	}
+	@Override
+	public void getOff(Person p, Integer busNum) {
+		// TODO Auto-generated method stub
+		p.getOff();
+		
+	}
+	
+
+	
+	
+	
+	
+	
+	
+}

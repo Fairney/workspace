@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\kks41\OneDrive\πŸ≈¡ »≠∏È\workspace\08_git\.metadata\.plugins\org.eclipse.jdt.core
+3516075981.index
+1865797976.index
+3740181830.index

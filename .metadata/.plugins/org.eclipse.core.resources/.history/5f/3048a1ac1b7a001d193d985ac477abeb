@@ -1,0 +1,20 @@
+package ChangedVehicleProgram;
+
+public class Subway implements Vehicle{
+
+	@Override
+	public void take(Person p, Integer busNum) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void getOff(Person p, Integer busNum) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+}

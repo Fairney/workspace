@@ -1,0 +1,55 @@
+/*
+ * 1. 상속을 사용해서 Point 클래스와 ColorPoint 클래스를 정의
+ * - 클래스 간으 ㅣ관계를 설정: 부모 클래스는 Point, 자식 클래스는 ColorPoint
+ * Point
+ * ColorPoint
+ */
+class Point {
+	protected int m_x, m_y;
+	Point(){};
+	Point(int x, int y){
+		m_x = x;
+		m_y = y;
+	}
+	public int getx()
+	{
+		return m_x;
+	}
+	public int gety()
+	{
+		return m_y;
+	}
+	
+	public void set(int x, int y)
+	{
+		m_x = x;
+		m_y = y;
+	}
+	public void showPoint()
+	{
+		System.out.println(m_x+m_y);
+	}
+	
+
+}
+
+class ColorPoint extends Point{
+	ColorPoint(int x, int y) {
+		
+		// TODO Auto-generated constructor stub
+	}
+
+	public void showPoint()
+	{
+		System.out.println((m_x+3)+(m_y+3));
+	}
+}
+public class TestPoint2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Point a = new Point(2,3);
+		a.showPoint();
+	}
+
+}

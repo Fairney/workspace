@@ -1,0 +1,100 @@
+package B_DatabasePractice;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+public class DmlFunction {
+	
+	public DmlFunction() {
+		System.out.println("Hello World Let's play Database");
+	}
+	//내가 만들고 싶은 것은 한 테이블 말고 테이블을 읽어와서 테이블의 COLUMN의 이름을 가져오고 싶은 것이다.
+	@SuppressWarnings("resource")
+	public <E> void select() {
+		Connection con = null;
+		Statement st =null;
+		ResultSet rs = null;
+		ResultSet rs2 =null;
+		Scanner sc = new Scanner(System.in);
+		List<String> a = new ArrayList<String>();//columnName
+		List<Integer> b = new ArrayList<Integer>();//columntype
+		System.out.println("확인할 데이터베이스의 이름");
+		String accept = sc.nextLine();
+		List<Object> accessDatabase = new ArrayList<Object>();//데이터베이스에서 받아온 값을 모두 저장.
+		int columnCnt;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","client1","1234");
+			
+			st = con.createStatement();
+			rs = st.executeQuery("Select * from " + accept);
+			ResultSetMetaData rsmd = rs.getMetaData();
+			columnCnt = rsmd.getColumnCount(); //컬럼의 수
+			
+			if(rs.next()){
+			  for(int i=1 ; i<=columnCnt ; i++){
+			     //System.out.println(rsmd.getColumnName(i));
+			     a.add(rsmd.getColumnName(i));
+			     b.add(rsmd.getColumnType(i));
+			     //System.out.println(rsmd.getColumnType(i));
+			  }
+			}
+			String selectSql = "SELECT ";
+			Iterator it = a.iterator();
+			while(it.hasNext()) {
+				
+				selectSql += it.next();
+				if(it.hasNext())
+					selectSql += ',';
+			}
+			selectSql += " FROM " + accept;
+			
+			rs.close();
+			
+			rs2 = st.executeQuery(selectSql);
+			//여기부분을 개선하고 싶음.
+			//읽어온 데이터베이스의 컬럼타입, 컬럼 이름을 받아오는 기능.
+			//rs = st.executeQuery()
+			System.out.println(selectSql);
+			int i = 0;
+			int j = 0;
+			while(rs2.next()) {
+				while(j<columnCnt) {
+				if(b.get(j) == 2) {
+					accessDatabase.add(rs2.getInt(a.get(j)));
+				}
+				else if(b.get(j) == 12){
+					accessDatabase.add(rs2.getString(a.get(j)));
+				}
+				System.out.print(accessDatabase.get(i));
+				System.out.println(i + ",");
+				j++;
+				}
+				j=0;
+				i++;
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+				accessDatabase.toString();
+				try {
+					if(rs2!= null)rs2.close();
+					if(st!= null)st.close();
+					if(con!= null)con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		DmlFunction a = new DmlFunction();
+		a.select();
+	}
+}

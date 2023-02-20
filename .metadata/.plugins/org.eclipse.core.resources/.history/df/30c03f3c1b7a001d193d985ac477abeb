@@ -1,0 +1,31 @@
+/*
+ * 1. 같은 학교에 다니고 있는 초등학교들의 예제
+ * -> 학교 이름을 하나의 static 멤버변수에서 관리.
+ */
+public class School {
+	
+	//클래스 변수: 클래스가 생성될때 한번만 만들어지는 변수
+	//- 객체가 생성되어도 만들어지지 않는 변수.
+	
+	//인스턴스 변수 :객체 마다 별도로 만들어지는 변수.
+	private static String M_SCNAME ="KH초등학교";
+	private String name = "국제초등학교";
+	public static void main(String[] args) {
+		
+		School c = new School();
+		System.out.println(c.name);
+		c.name = "제주초등학교"
+		School a = new School();
+		School b = new School();
+		
+		System.out.println("학교 이름: " + a.M_SCNAME);
+		System.out.println("학교 이름: " + b.M_SCNAME);
+		a.M_SCNAME = "서울초등학교";
+		a.name = "판곡초등학교";
+		System.out.println("학교 이름: " + a.M_SCNAME);
+		System.out.println("학교 이름: " + a.name);
+		System.out.println("학교 이름: " + b.M_SCNAME);
+		System.out.println("학교 이름: " + School.M_SCNAME);
+	}
+
+}

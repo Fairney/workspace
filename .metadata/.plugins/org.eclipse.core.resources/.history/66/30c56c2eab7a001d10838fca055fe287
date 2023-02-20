@@ -1,0 +1,41 @@
+package ChangedVehicleProgram;
+
+import java.util.Scanner;
+import java.util.Vector;
+
+public class MainController {
+	static String name;
+	static Double money;
+	static Integer age;
+	static boolean isRide;
+	
+	
+	void makePerson(String name, Double money, Integer age) {
+		n = new Person(name,money,age);
+	}
+	
+	static void district(Vehicle v) {
+		if(v instanceof Bus)//bus였을때는 busNum이 작용을 하지만 busNum이 아니었을 때는 busNum을 받을 필요가 없다.
+		{
+			v.take(n);
+		}
+		else if(v instanceof Subway)
+		{
+			v.take(n);
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		name = sc.nextLine();
+		money = sc.nextDouble();
+		MainController main = new MainController();
+		main.makePerson(name,money,age);
+		main.inputPerson(n);
+		
+		//\if(collector.contains(T t))
+		
+		sc.close();
+	}
+
+}

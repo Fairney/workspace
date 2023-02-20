@@ -1,0 +1,34 @@
+package ChangedVehicleProgram;
+
+public class Bus implements Vehicle{
+	Integer busNum;
+	double time;
+	@Override
+	public void take(Person p) {
+		// TODO Auto-generated method stub
+		if(p.age <=7 && p.money>=700) {
+			isRide = true;
+			p.money -= 700;
+		}
+		else if(p.age <= 19 && p.money >=1150) {
+			isRide = true;
+			p.money -=1150;
+		}
+		else if(p.age>19 && p.money>=1450){
+			isRide = true;
+			p.money -= 1450;
+		}
+	}
+	@Override
+	public void getOff() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
+	
+	
+	
+	
+}

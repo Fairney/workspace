@@ -1,0 +1,93 @@
+package pkg3;
+/*
+ * 삼각형 도형을 나타내는 클래스
+ */
+final class Tri implements Shape{
+	//밑변 * 높이 / 2 
+	//1. 밑변을 정수로 보관할 멤버변수가 필요
+	private double a;
+	private double b;
+	
+	//새로운 요구사항이 ㅐㅇ겨서 클래스 외부에서 멤버변수 a와 b의 값을 수정하는 기능이 추가
+	//1) 멤버변수 a 하나만 수정하는 메소드를 정의
+	
+	public void changeA(double a) {
+		this.a =a;
+	}
+	//2) 멤버변수 b 하나만 수정하는 메소드를 정의
+	public void changeB(double b) {
+		this.b =b;
+	}
+	
+	//3) 한번에 모든 변수를 바꾸고 싶다.
+	public void changeAB(double a, double b)
+	{
+		changeA(a);
+		changeB(b);//메소드가 많아질 수록 메소드를 활용하여라.
+	}
+	
+	public Tri(int a, int b) {
+		this.a=a;
+		this.b=b;
+	}
+	
+	
+	//3. 위에서 선언한 멤버변수 a와 b에 특정 값을 입력하는 생성자를 정의
+@Override
+	public double getArea() {
+		// TODO Auto-generated method stub
+		double result =a*b/2;
+		return result;
+	}
+	@Override
+	public double getArea(double a, double b) {
+		return a*b/2;
+	}
+	
+	@Override
+	public double getArea(double a) {
+		// TODO Auto-generated method stub
+		
+		return a*this.b/2;
+	}
+	
+	
+}
+class Rect implements Shape{
+	
+	double a,b;
+	
+	Rect(double a, double b){
+	 this.a = a;
+	 this.b = b;
+	}
+	
+	@Override
+	public double getArea(double a, double b) {
+		this.a=a;
+		this.b=b;
+		return a*b;
+	}
+	
+	@Override
+	public double getArea() {
+		// TODO Auto-generated method stub
+		return this.a*this.b;
+	}
+
+	@Override
+	public double getArea(double a) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+}
+public class Area {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

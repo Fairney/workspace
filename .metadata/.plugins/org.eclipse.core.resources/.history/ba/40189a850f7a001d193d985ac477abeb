@@ -1,0 +1,22 @@
+import java.util.Arrays;
+import java.util.Random;
+
+public class TestStatic {
+	
+	static int[] arr = new int[5];
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//1) 배열과 for반복문을 사용
+		
+		for(int a = 0; a<arr.length; a++) {
+			
+			arr[a]=a+1;
+		}
+		System.out.println(Arrays.toString(arr));
+		
+		for(int value : arr) {
+			System.out.println(arr);
+		}
+	}
+
+}

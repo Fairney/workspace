@@ -1,0 +1,17 @@
+import java.util.Random;
+
+public class TestStatic {
+	
+	static int[] arr = new int[5];
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//1) 배열과 for반복문을 사용
+		Random r = new Random();
+		for(int a = 0; a<arr.length; a++) {
+			
+			arr[a]=r.nextInt(5);
+		}
+		System.out.println(arr[2]);
+	}
+
+}

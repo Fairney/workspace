@@ -1,0 +1,46 @@
+/*
+ * 1. 메소드의 중복(Overloading) 개념을 이해하기 위한 예제
+ *  - 예) 덧셈 계싼을 수행하는 메소드를 정의하는 경우
+ */
+public class TestAdder {
+	//0. 정수를 보관하기 위한 멤버변수를 선언: 덧셈 계싼을 위해서는 2개의 정수가 필요
+	//-> 그래서 멤버변수도 2개를 선언
+	private double a = 10;
+	private double b = 20;
+	
+	private double sum = 0;
+	//2. 정수 덧셈 메소드를 정의할 때
+	//1) 멤버변수를 사용
+	//2) 매개변수를 사용
+	//3) 멤버변수와 매개변수를 함께 사용.
+	
+	
+	/*
+	 * 이름이 같은 함수를 또 생성
+	 * - 이름이 같다는 의미: 기능이 같음
+	 * 예1) 방금 전에는 정수 덧셈 계싼을 수행하는 함수
+	 * 예2) 새로 추가할 함수는 실수 덧셈 계싼을 수행하는 함수.
+	 */
+	//매개변수를 선언해서 함수 외부로부터 실수 값을 2개 가져와서 실수 덧셈 계싼을 수행
+	 
+	public double addder() {
+		return a+b; 
+	}
+	public double addder(double a, double b) {
+		System.out.println("Double");
+		return a+b; 
+	}
+	
+	public int addder(int a, int b) {
+		System.out.println("int");
+		return a+b; 
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TestAdder object1 = new TestAdder();
+		//adder() 함수를 호출해서 정수 덧셈 계싼을 하고 결과를 가져오기(반환받기)
+		System.out.println(object1.addder(20, 30));
+		System.out.println(object1.addder(20.0, 30.0));
+	}
+
+}

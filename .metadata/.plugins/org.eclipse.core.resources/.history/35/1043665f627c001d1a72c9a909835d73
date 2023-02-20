@@ -1,0 +1,36 @@
+package pkg5;
+
+class Shape{
+	public void draw() {
+		System.out.println("도형을 그립니다.");
+	}
+}
+class Line{
+	public void draw() {
+		System.out.println("선을 그립니다.");
+	}
+}
+class Circle extends Line{
+	public void draw() {
+		System.out.println("원을 그립니다.");
+	}
+}
+class Rec extends Circle{
+	public void draw() {
+		System.out.println("사각형을 그립니다.");
+	}
+}
+public class Overriding {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Line line = new Line();
+		Circle circle = new Circle();
+		Rec rec = new Rec();
+		
+		line.draw();
+		circle.draw();
+		rec.draw();
+	}
+
+}

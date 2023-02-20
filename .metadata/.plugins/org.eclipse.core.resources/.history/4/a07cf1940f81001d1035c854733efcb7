@@ -1,0 +1,12 @@
+package pkg3;
+/*
+ * 예제:도형의 넓이를 구하기
+ * 1) 도형의 종류: 삼각형, 사각형, 원
+ * 2. 새로운 인터페이스를 정의해서
+ * 도형의 넓이를 궇알 때 호출할 수 있는 추상 메소드를 선언.
+ */
+public interface Shape {
+
+	public double getArea();
+	
+}

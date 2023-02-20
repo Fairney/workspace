@@ -1,0 +1,22 @@
+package ChangedVehicleProgram;
+
+public class Bus extends Vehicle{
+	Integer busNum;
+
+	@Override
+	void take() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void getOff() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
+	
+	
+}

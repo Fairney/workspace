@@ -1,0 +1,9 @@
+package mypkg01;
+
+public class Student {
+
+	//2. 학생 번호를 보관할 수 있는 멤버변수를 선언 + 초기화
+	public int number = 1;
+
+
+}

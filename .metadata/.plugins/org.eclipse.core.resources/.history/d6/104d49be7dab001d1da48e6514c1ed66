@@ -1,0 +1,13 @@
+package map;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapController {
+
+	public void doMap() {
+		Map map = new HashMap();
+		map.put(	)
+	}
+
+}

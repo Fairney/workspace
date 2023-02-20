@@ -1,0 +1,53 @@
+package mypkg01;
+
+public class Adder {
+	int a,b,c;
+	
+	public int add(int a, int b) {
+		c= a + b;
+		return c;//메모리에 남아있음.
+	}
+	
+	public void add2(int a, int b) {
+		c= a + b;
+		System.out.println(a + " + " +b + " = " + c);
+		
+	}
+	/*
+	 * 함수를 정의할 때 void 값으로 할 경우
+	 * -하는 경우  return 값; 또는 return 변수명; 또는 return 계산식;
+	 * 또는 return 함수명(); 을 쓸 수 없다. return
+	 * 예1) return 10;
+	 *  return c;
+	 *  return10 + 10
+	 *  return 함수명();
+	 * 불가.
+	 */
+	public int method01(){
+		return 10;//위가 중요 위 아래 위위 아래.
+	}
+	
+	public double method02(){
+		return 0.3;
+	}
+	public String method03() {
+		return "메소드03번";
+	}
+	public Character method04() {
+		return '뭐';
+	}
+	public static void main(String args[]) {
+		//1. 객체를 생성
+		Adder a = new Adder();
+		//2. add() 함수를 사용(이름을 사용했기 때문에 호출 명령어)
+		int fb = a.add(10, 20);
+		
+		
+		//3. 변수 fb는 add() 함수 내부에 있던 return c 명령어가 실행된 후에
+		//변수 c의 값이 자동으로 대입됩니다. (이유: add() 함수가 종료될 때 값을 가져오기 때문)
+		System.out.println("10 더하기 20 = " + fb);
+//		int f = a.add2(20, 30);//return값이 없으므로 오류가 난다.
+		a.add2(20, 30);//
+		a.add2(30, 50);
+	}
+}

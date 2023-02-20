@@ -1,0 +1,92 @@
+/*
+ * 1. 상속을 사용해서 Point 클래스와 ColorPoint 클래스를 정의
+ * - 클래스 간으 ㅣ관계를 설정: 부모 클래스는 Point, 자식 클래스는 ColorPoint
+ * Point
+ * ColorPoint
+ */
+class Point {
+	protected int m_x, m_y;
+	//색상을 문자열로 추가: 문자열은 String클래스를 사용
+	//멤버 변수를 선언
+	private String color;//여기 있는 것들은 모두 전역변수.
+	//멤버 변수를 선언->전역 변수(모든 메소드에서 함께 사용) -> UML에서 다룸.
+	String color2;//접근지정자를 붙이면 전역변수가 된다. 즉 이 부분에서 사용해야한다
+	public String color3;
+	protected String color4;
+	Point(){
+		m_x = 0;
+		m_y = 0;
+	};
+	Point(int x, int y){
+		m_x = x;
+		m_y = y;
+	}
+	public int getx()
+	{
+		return m_x;
+	}
+	public int gety()
+	{
+		return m_y;
+	}
+	
+	public void set(int x, int y)
+	{
+		m_x = x;
+		m_y = y;
+	}
+	public void method() {
+		//private String avs = "뭐"; 지역변수는 접근지정자를 넣을 수 없음.
+		//Life Cycle이 다름. 함수 외부에서 호출되는 당시에 스택 메모리에 생성
+		//-함수가 종료되면 스택 메모리에서 제거
+		//JVM: Java Virtual Machine(프로그램)
+	}
+	public void showPoint()
+	{
+		System.out.println(m_x+m_y);
+	}
+	//위에서 만든 set함수는 한번에 2개를 다 바꾸는 함수지만 단점은 값을 알아야한다는 것. 이제 한개씩 받아와서 한개씩 바꿀 함숮를 만든다.
+	public void setX(int x) {
+		System.out.println("x값만을 변경");
+		m_x = x;
+	}
+	public void setY(int y) {
+		System.out.println("y값만을 변경");
+		m_y = y;
+	}
+}
+
+class ColorPoint extends Point{
+	ColorPoint() {
+		
+		// TODO Auto-generated constructor stub
+	}
+	ColorPoint(int x, int y) {
+		super(x,y);
+		m_x= x;
+		m_y= y;
+		// TODO Auto-generated constructor stub
+	}
+
+	public void showPoint()
+	{
+		System.out.println((m_x+3)+(m_y+3));
+	}
+}
+public class TestPoint2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Point a = new Point(2,3);
+		ColorPoint b = new ColorPoint();
+		a.showPoint();
+		b.set(30, 50);
+		b.showPoint();
+		b.setX(0);
+		b.setY(0);
+		b.showPoint();
+		a.showPoint();
+		
+	}
+
+}

@@ -1,0 +1,7 @@
+package ChangedVehicleProgram;
+
+public class Vehicle {
+
+	boolean isRide = false;
+
+}

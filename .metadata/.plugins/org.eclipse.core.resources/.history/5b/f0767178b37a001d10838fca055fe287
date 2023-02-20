@@ -1,0 +1,20 @@
+/*
+ * static 제한자(수정자)
+ * -메모리에 생성되는 멤버변수와 메소드의 갯수를 제한(1개)
+ * -클래스 당 하나만 생성
+ */
+class PrivateConstructor{
+	//생성자를 정의할 때 최고 보안 등급인 private을 사용.
+	private PrivateConstructor() {
+		
+	}
+}
+public class MainClass {
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

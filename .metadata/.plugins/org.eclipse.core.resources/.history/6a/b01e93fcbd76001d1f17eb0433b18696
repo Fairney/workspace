@@ -1,0 +1,17 @@
+package ChangedVehicleProgram;
+
+import java.util.Vector;
+
+public class MainController {
+
+	void inputPerson(String name, String money)
+	{
+		Vector<Person> person = new Vector<>();
+		person.add(Person(name,money));
+	};
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

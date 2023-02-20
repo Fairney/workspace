@@ -1,0 +1,85 @@
+/*
+ * static 제한자(수정자)
+ * -메모리에 생성되는 멤버변수와 메소드의 갯수를 제한(1개)
+ * -클래스 당 하나만 생성
+ */
+class PrivateConstructor{
+	//생성자를 정의할 때 최고 보안 등급인 private을 사용.
+	//-다른 클래스에서 new 클래스명()명령어가 실행되지 앟도록 막는 방법
+	//-활용 예) 나중에 데이터베이스 프로그래밍, Math 클래스 등
+	//메모리 공간을 절약하는 기법.
+	private PrivateConstructor() {
+		System.out.println("private로 만든 생성자.");
+	}
+	public static int abs(int a) {
+		System.out.println("static int abs (int a) 메소드가 호출됨");
+		return a<0? -a:a;
+	}
+	/*
+	 * Math클래스에는 max()메소드를 흉내내기
+	 * -max: 큰값또는 최댓 값
+	 * -외부에서 2개의 정숫 값을 입력으로 받아서 큰 값을 반환하는 명령어를 내장하고 있습니다.
+	 * ->두개의 정숫 값을 받을 매개변수를 선언: int a, int b
+	 */
+	public static int max(int a, int b) {
+		System.out.println("새로 정의한 max(int a, int b) 메소드가 호출됨");
+		
+//		if(a>b) return a;
+//		else if(a < b) return b;
+//		else return a;
+
+		/*
+		if(a==b) {
+			System.out.println("같다");
+			return 0;
+		}
+		else
+		{
+			return a<b?b:a;
+		}
+		*/
+		int result;
+		if(a>b) result =a;
+		else result = b;
+		return result;
+		
+	}
+}
+public class MainClass {
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Math 클래스에 정의되어 있는 max() 함수를 사용(호출)하기
+		//- 형식: int 변수명 = Math.max(정숫값1, 정숫값2);
+		int b =Math.max(5, 5);
+		System.out.println("5와 5중에서 큰 정수는 " + b);
+		int c =Math.max(3, 5);
+		System.out.println("3과 5중에서 큰 정수는 " + c);
+		int d =Math.max(6, 5);
+		System.out.println("6와 5중에서 큰 정수는 " + d);
+		MainClass a = new MainClass();
+		//2. 특수한 경우로는 기본 생성자를 정의할 때 private 예약어를 사용한다.
+		//private 예약어의 기본성질: 생성자를 정의한 클래스 내부에서만 사용 가능.
+		// - 클래스 외부, 다른 클래스에서는 사용 불가능
+		// -  개념: 메모리에 생성되는 멤버변수와 메소드의 갯수를 하나로 제한
+//		Math a = new Math();//안됨. f3을누르면 그 해당 클래스의 정의부분에 들어가진다. 이건 private로 생성자를 생성했기 때문에 안됨.
+		//PrivateConstructor p = new Constructor();//이걸 보면 알 수 있음.
+		//다른 클래스에서 객체 생성이 되지 앟으므로 클래스 내부에서 정의한 메소드를
+		//클래스 명으로 사용(접근 또는 호출(
+		// - abs()메소드를 호출: PrivateConClass.abs(-5)
+		int value = PrivateConstructor.abs(-5);
+		System.out.println("음수 -5의 절댓값은 " + value);
+		int maxValue = PrivateConstructor.max(3, 5);
+		System.out.println(maxValue);
+		
+		for(int i = 1; i<=9; i+=2) {
+			System.out.println("2 * " + i +" = " + 2*i);
+		}
+		for(int i = 2; i<=9; i+=2) {
+			System.out.println("2 * " + i +" = " + 2*i);
+		}
+		
+	}
+
+}

@@ -1,0 +1,36 @@
+package pkg3;
+/*
+ * 삼각형 도형을 나타내는 클래스
+ */
+final class Tri implements Shape{
+	//밑변 * 높이 / 2 
+	//1. 밑변을 정수로 보관할 멤버변수가 필요
+	int a, b;
+	
+	@Override
+	public double getArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+}
+class Rect implements Shape{
+
+	double a,b;
+	@Override
+	public double getArea() {
+		// TODO Auto-generated method stub
+		
+		return 0;
+	}
+	
+	
+}
+public class Area {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

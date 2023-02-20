@@ -1,0 +1,41 @@
+/*
+ * 생성자(Constructor)
+ * ->클래스 명과 이름이 같은 메소드(함수)
+ * -역할: 멤버 변수의 초기값( 시작값 ) 을 정해줍니다.
+ */
+//새로운 Academy 클래스를 정의: 주의사항으로 public 예약어는 불가능
+//- 이유: public class는 하나만 존재) 이유: .java의 파일 이름으로 사용되기 때문)
+// - 현재 파일 이름: TestConstructor.java
+class Academy{
+	 int studentNo = 1;
+	 String studentName = "홍길동";
+	 Academy(){
+		 //기본생성자.
+	 }
+	 Academy(String name, Integer number){
+		 this.studentName = name;
+		 this.studentNo = number;
+	 }
+}
+
+public class TestConstructor {
+	
+	
+	
+
+	public static void main(String[] args) {
+		Academy a = new Academy();
+		Academy b = new Academy();
+		Academy c = new Academy();
+		System.out.println("1. 객체 이름 a=====================================================");
+		System.out.println(a.studentNo);
+		System.out.println(a.studentName);
+		System.out.println("2. 객체 이름 b=====================================================");
+		System.out.println(b.studentNo);
+		System.out.println(b.studentName);
+		System.out.println("3. 객체 이름 c=====================================================");
+		System.out.println(c.studentNo);
+		System.out.println(c.studentName);
+	}
+
+}

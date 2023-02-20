@@ -1,0 +1,26 @@
+package map;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapController {
+
+	public void doMap() {
+		Map map = new HashMap();
+		map.put("새우깡", new Snack("짠맛",1500));
+		map.put("꿀꽈배기", new Snack("단맛",1600));
+		map.put("허니포테토", new Snack("단짠맛",1700));
+		map.put("다이제", new Snack("단맛",1600));
+		System.out.println(map);
+		
+		map.put("새우깡", new Snack("단짠맛",1700));
+		System.out.println(map);
+		
+		Set set2 = map.keyset();
+		for(Object o : set2) {
+			Map.Entry me = (Map.Entry)o;
+			System.out.println("키 : %s, 값: %s%n", me.getKey(), me.getValue()));
+		}
+	}
+
+}

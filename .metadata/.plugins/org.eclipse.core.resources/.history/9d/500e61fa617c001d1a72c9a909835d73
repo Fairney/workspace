@@ -1,0 +1,25 @@
+package pkg5;
+
+class Line{
+	public void draw() {
+		System.out.println("선을 그립니다.");
+	}
+}
+class Circle extends Line{
+	public void draw() {
+		System.out.println("선을 그립니다.");
+	}
+}
+class Rec extends Circle{
+	public void draw() {
+		System.out.println("선을 그립니다.");
+	}
+}
+public class Overriding {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

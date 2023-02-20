@@ -1,0 +1,15 @@
+package map;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapController {
+
+	public void doMap() {
+		Map map = new HashMap();
+		map.put("새우깡", new Snack("짠맛",1500));
+		map.put("꿀꽈배기", new Snack("단맛",1600));
+		map.put("허니포테토", new Snack("단짠맛",1700));
+	}
+
+}

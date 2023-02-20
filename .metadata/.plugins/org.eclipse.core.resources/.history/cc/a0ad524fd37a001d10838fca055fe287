@@ -1,0 +1,60 @@
+/*
+ * 상속을 구현해서 클래스 계층구조를 확인할 것이다. 
+ * 1. 상속 예제
+ * 1) 클래스 계층 구조: 위쪽에 있는 클래스는 부모 클래스(어ㅏ래에 있는 자식 클래스에게 멤버변수와 메소드를 물려줍니다.)
+ *  - 아래에 있는 클래스는 자식 클래스(부모 클래스가 물려준 변수와 메소드를 받습니다.)
+ *  2) 생성자의 호출 순서와 실행 순서를 확인하기 예제
+ *  3) 계층 구조
+ *  A
+ *  B
+ *  C
+ */
+
+class A{
+	A(){
+		System.out.println("슈퍼 부모 클래스 A의 생성자");
+	}
+	A(int member){
+		System.out.println("슈퍼 부모 클래스 A의 매개변수생성자");
+	}
+	A(String member){
+		System.out.println("슈퍼 부모 클래스 A의 스트링 매개변수생성자");
+	}
+}
+class B extends A{
+	B(){
+		System.out.println("B의 생성자.");
+	}
+	B(int member){
+		super(member);
+		System.out.println("B의 매개변수 생성자.");
+	}
+	B(String member){
+		super(member);
+		System.out.println("B의 String 매개변수 생성자");
+	}
+	
+}
+class C extends B{
+	C(){
+		System.out.println("C의 생성자.");
+	}
+	C(int member){
+		super(member);//부모클래스에서 매개변수에 해당하는 생성자를 호출.
+		System.out.println("C의 매개변수 생성자.");
+	}
+	C(String member){
+		super(member);
+		System.out.println("C의 스트링 매개변수 생성자.");
+	}
+}
+public class TestInCo {
+
+	public static void main(String[] args) {
+		
+		C c = new C(20);//호출은 C->B->A// 실행순서는 A->B->C
+		B b = new B();
+		C e = new C("20");
+	}
+
+}

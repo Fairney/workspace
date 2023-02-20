@@ -1,0 +1,23 @@
+/*
+ * 사람 클래스를 새로 정의(선언)
+ */
+public class Person {
+	//멤버변수를 선언할 수 있는 영역
+	
+	//생성자 메소드를 정의할 수 있는 영역
+	//1) 사람 이름을 보관할 수 있는 멤버변수를 선언 + 초기화
+	private String name = "name";
+	public Person() {
+		System.out.println("Person 클래스 기본 생성자 입니다.");
+	}
+	public Person(String name) {
+		this.name = name;
+	}
+
+	public static void main(String[] arg) {
+		Person a = new Person();
+		Person b = new Person("누구쎄용?");
+		System.out.println(a.name);
+		System.out.println(b.name);
+	}
+}

@@ -1,0 +1,13 @@
+package ChangedVehicleProgram;
+
+public class Vehicle {
+
+	
+	boolean isRide = false;
+	void take() {
+		
+		if()
+		isRide = true;
+		
+	}
+}

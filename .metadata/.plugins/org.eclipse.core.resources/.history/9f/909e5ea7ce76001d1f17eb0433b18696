@@ -1,0 +1,24 @@
+package ChangedVehicleProgram;
+
+import java.util.Scanner;
+import java.util.Vector;
+
+public class MainController {
+	static String name;
+	static double money;
+	static Vector<Person> collector = new Vector<>();
+	static void inputPerson(String name, double money)
+	{
+		Person n = new Person(name,money);
+		collector.add(n);
+	};
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		name = sc.nextLine();
+		money = sc.nextDouble();
+			inputPerson(name, money);
+		sc.close();
+	}
+
+}

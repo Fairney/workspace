@@ -1,0 +1,20 @@
+package A_list.listSort;
+
+public class Customer {
+	private String m_name;
+	private int m_age;
+	private char m_gender;
+	private double m_point;
+
+	Customer(String name, int age, char gender, double point){
+	 m_name= name;
+	 m_age = age;
+	 m_gender = gender;
+	 m_point = point;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
